@@ -1,0 +1,48 @@
+if $TERM == "xterm-256color"
+    set t_Co=256
+endif
+
+set number
+set incsearch
+set ruler
+set cul "cuc
+
+"set background=light
+set background=dark
+colorscheme delek
+"colorscheme default
+"colorscheme mine
+"colorscheme koehler
+"colorscheme oceandeep
+
+set autoindent
+"set cindent
+
+"inoremap { {}<Esc>i
+"inoremap [ []<Esc>i
+"inoremap ( ()<Esc>i
+
+syntax enable
+
+    " The width of a TAB is set to 4.
+    " Still it is a \t. It is just that
+    " Vim will interpret it to be having
+    " a width of 4.
+set tabstop=4       
+    " Indents will have a width of 4
+set shiftwidth=4    
+    " Sets the number of columns for a TAB
+set softtabstop=0 
+    " Expand TABs to spaces 
+    " noexpandtab   
+set expandtab       
+
+    " Show highlighting groups for current word
+"nmap <F9> :call <SID>SynStack()<CR>
+"function! <SID>SynStack()
+"    if !exists("*synstack")
+"        return
+"    endif
+"    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, 
+    "name")')
+"endfunc

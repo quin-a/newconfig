@@ -1,0 +1,56 @@
+################# MINE ##################
+
+
+
+# Every color command needs to be in \[\033[--m\]. When we have the form: 1;37 that means
+# make white and bold. See http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html for more 
+# info.
+export PS1="\[\033[1;37m\]{\[\033[35m\]\!\[\033[1m\]\[\033[1;37m\]}\[\033[0m\]\[\033[36m\]\w \[\033[1;37m\]$\[\033[0m\] "
+
+export CLICOLOR=1
+# The x are separators,caps make text bold, and the letters correspond to the order
+# in which they appear in terminal settings, ie. a=black, b=red, c=green, d=yellow, 
+# e=blue, f=magenta, g=cyan, h=white.
+# The order that they are in is: 1=directory, 2=symbolic link, 3=socket, 4=pipe, 
+# 5=executable, 6=block special, 7=character special, 8=executable with setuid bit set,
+# 9=executable with setgid bit set, 10=directory writable to others with sticky bit,
+# 11=directory writable to others without sitcky bit.
+export LSCOLORS=GxCxGxDxFxegedabagacad
+
+#export DISPLAY=:localhost:0,0
+
+
+set editing-mode vi
+set keymap vi-command
+
+## Stops ^D logouts
+#set -o ignoreeof
+
+alias ls='ls -FG'
+alias la='ls -a'
+alias ,,='cs ..'
+alias ..='cd ..'
+alias ,='cd -'
+alias py3='python3'
+#alias pip='pip3'
+alias py2="python2.7"
+alias ll='ls -lh'
+
+function cs {
+    builtin cd "$@" && ls -a
+    }   
+
+# set +u nounset
+
+# Uncomment to not allow writing over files with '>'
+# set -o noclobber
+
+# Uncomment to allow searches to include dot (.) files
+# shopt -s dotglob
+
+
+
+#if [ -f "$HOME/.bashrc" ]; then
+#   source ~/.bashrc
+#fi
+
